@@ -9,4 +9,4 @@ Pour commencer l'activité, vas dans https://github.com/NathanFAIN/Code_Sort/blo
 Bonne chance !
 
 
-PS : Ne reprenez pas le binaire pour votre projet pushswap, nous le considérerons comme un vole de code. Merci pour votre compréhension .
+PS : Ne reprenez pas le array.c pour votre projet pushswap, nous le considérerons comme un vole de code. Merci pour votre compréhension.
