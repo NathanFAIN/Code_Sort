@@ -29,7 +29,6 @@ void sort_array(array_t *array)
 
 int main(int argc, char *argv[])
 {
-
     // Création de l'array
     array_t array = create_array(argc, argv);
 

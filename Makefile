@@ -19,7 +19,7 @@ RM	=	rm -f
 
 CFLAGS += -I ./include/
 CFLAGS += -W -Wall -Wextra
-CFLAGS += -L ./lib/ -lmy
+CFLAGS += -L ./.lib/ -lmy
 
 all: $(NAME)
 
@@ -40,8 +40,8 @@ fclean:	clean
 re: 	fclean all
 
 lib:
-		$(CC) -c lib/array.c -W -Wall -Wextra -I ./include/
-		ar rc lib/libmy.a array.o
+		$(CC) -c .lib/array.c -W -Wall -Wextra -I ./include/
+		ar rc .lib/libmy.a array.o
 
 %.o:	%.c
 		@ echo "\033[1;34m[ OK ]\033[0m Compiling" $<
