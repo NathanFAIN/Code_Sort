@@ -39,8 +39,12 @@ fclean:	clean
 
 re: 	fclean all
 
+lib:
+		$(CC) -c lib/array.c -W -Wall -Wextra -I ./include/
+		ar rc lib/libmy.a array.o
+
 %.o:	%.c
 		@ echo "\033[1;34m[ OK ]\033[0m Compiling" $<
 		@ $(CC) -o $@ -c $< $(CFLAGS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re lib
