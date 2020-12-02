@@ -23,7 +23,7 @@ CFLAGS += -L ./lib/ -lmy
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) lib
 		@ echo "\033[1;36m[ FILES COMPILED ] \033[0m \033[1;34m$(NBR_OF_FILES)\033[0m"
 		@ $(CC) -o $(NAME) $(OBJS) $(CFLAGS)
 		@ echo "\033[1;34mBinary : \033[1;32m$(NAME)\033[1;34m created sucesfully.\033[0m"
