@@ -8,6 +8,7 @@
 NAME	=	binary
 
 SRCS	= 	./src/main.c \
+			./.lib/array.c \
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -19,11 +20,10 @@ RM	=	rm -f
 
 CFLAGS += -I ./include/
 CFLAGS += -W -Wall -Wextra
-CFLAGS += -L ./.lib/ -lmy
 
 all: $(NAME)
 
-$(NAME): $(OBJS) lib
+$(NAME): $(OBJS)
 		@ echo "\033[1;36m[ FILES COMPILED ] \033[0m \033[1;34m$(NBR_OF_FILES)\033[0m"
 		@ $(CC) -o $(NAME) $(OBJS) $(CFLAGS)
 		@ echo "\033[1;34mBinary : \033[1;32m$(NAME)\033[1;34m created sucesfully.\033[0m"
@@ -38,10 +38,6 @@ fclean:	clean
 		@ $(RM) $(NAME)
 
 re: 	fclean all
-
-lib:
-		$(CC) -c .lib/array.c -W -Wall -Wextra -I ./include/
-		ar rc .lib/libmy.a array.o
 
 %.o:	%.c
 		@ echo "\033[1;34m[ OK ]\033[0m Compiling" $<
